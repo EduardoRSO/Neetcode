@@ -8,6 +8,9 @@ using namespace std;
 
 // I tried to make an hash of <number, frequency> and an inverse hash <frequency, [numbers with this frequency]>. It works, but after I saw other solutions I now think that I am carrying to much unused information. What I could have done is just get all <number, frequency> and put them in a vector of <pair<int,int>> and the sort it. The problem with my solution is that I must remove the value whenever it change its frequency, since I add them in O(nums.size()), buut this may something with amortized cost.
 
+// sort(res.begin(),res.end(),[](const auto &p ,const auto &q){ return p.second > q.second ;});
+
+//The code below will help me in the future
 vector<int> popValue(vector<int> c, int value){
 	for(int i = 0; i < c.size(); i++)
 		if(value == c[i]){
